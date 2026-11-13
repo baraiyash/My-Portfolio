@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { links, projects, skills, edu, interests, coursework, certs, type Cert } from './data'
 import portrait from './assets/portrait.webp'
 
@@ -123,5 +124,6 @@ export default function App() {
       <div className="fb"><span>© 2026 Yash Barai</span><span className="fc">Understanding the system. Improving the solution.</span>
         <span className="fr"><span>Ahmedabad, India</span><a className="up" href="#top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: motion ? 'smooth' : 'auto' }) }}>↑ Back to top</a></span></div></footer>
     {cert && <Lightbox c={cert} onClose={() => setCert(null)} />}
+    <Analytics />
   </>)
 }
